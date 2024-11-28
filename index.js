@@ -1,4 +1,6 @@
 let postsArray = []
+const titleInput = document.querySelector('#post-title')
+const bodyInput = document.querySelector('#post-body')
 
 const renderPosts = () => {
     let html = ""
@@ -40,9 +42,7 @@ form.addEventListener('submit', (e) => {
         .then(post =>  {
             postsArray.unshift(post)
             renderPosts()
-            const titleInput = document.querySelector('#post-title');
             titleInput.value = ''
-            const bodyInput = document.querySelector('#post-body');
             bodyInput.value = ''
         })
 })
